@@ -1,0 +1,107 @@
+whitelist: true
+downgrade_enchantments: true
+enchantment:
+  PROTECTION_ENVIRONMENTAL:
+  - 1
+  - 2
+  - 3
+  - 4
+  PROTECTION_FIRE:
+  - 1
+  - 2
+  - 3
+  - 4
+  PROTECTION_FALL:
+  - 1
+  - 2
+  - 3
+  - 4
+  PROTECTION_EXPLOSIONS:
+  - 1
+  - 2
+  - 3
+  - 4
+  PROTECTION_PROJECTILE:
+  - 1
+  - 2
+  - 3
+  - 4
+  OXYGEN:
+  - 1
+  - 2
+  - 3
+  WATER_WORKER:
+  - 1
+  THORNS:
+  - 1
+  - 2
+  - 3
+  DEPTH_STRIDER:
+  - 1
+  - 2
+  - 3
+  DAMAGE_ALL:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  DAMAGE_UNDEAD:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  DAMAGE_ARTHROPODS:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  KNOCKBACK:
+  - 1
+  - 2
+  FIRE_ASPECT:
+  - 1
+  - 2
+  LOOT_BONUS_MOBS:
+  - 1
+  - 2
+  - 3
+  DIG_SPEED:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  SILK_TOUCH:
+  - 1
+  DURABILITY:
+  - 1
+  - 2
+  - 3
+  LOOT_BONUS_BLOCKS:
+  - 1
+  - 2
+  - 3
+  ARROW_DAMAGE:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  ARROW_KNOCKBACK:
+  - 1
+  - 2
+  ARROW_FIRE:
+  - 1
+  ARROW_INFINITE:
+  - 1
+  LUCK:
+  - 1
+  - 2
+  - 3
+  LURE:
+  - 1
+  - 2
+  - 3
