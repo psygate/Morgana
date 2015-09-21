@@ -29,7 +29,7 @@ public class EnchantmentListener implements Listener {
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.NORMAL)
     public void enchant(EnchantItemEvent ev) {
-        Morgana.getPlugin(Morgana.class).getLogger().log(Level.INFO, "Enchant event.");
+        Morgana.getPlugin(Morgana.class).getLogger().log(Level.FINE, "Enchant event.");
         Map<Enchantment, Integer> enchants = checkAndModifyEnchantments(ev.getEnchantsToAdd());
         ev.getEnchantsToAdd().clear();
         ev.getEnchantsToAdd().putAll(enchants);
@@ -37,11 +37,12 @@ public class EnchantmentListener implements Listener {
 
     @EventHandler(ignoreCancelled = true, priority = EventPriority.NORMAL)
     public void enchant(InventoryClickEvent ev) {
-        Morgana.getPlugin(Morgana.class).getLogger().log(Level.INFO, "Anvil event.");
+//        Morgana.getPlugin(Morgana.class).getLogger().log(Level.INFO, "Anvil event.");
 
         if (ev.getClickedInventory() instanceof AnvilInventory) {
             AnvilInventory inv = (AnvilInventory) ev.getClickedInventory();
             ItemStack output = inv.getItem(inv.getSize() - 1);
+            Morgana.getPlugin(Morgana.class).getLogger().log(Level.FINE, "Anvil event.");
 
             if (output == null || output.getType() == Material.AIR) {
                 return;
