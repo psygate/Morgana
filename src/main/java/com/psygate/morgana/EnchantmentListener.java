@@ -11,11 +11,13 @@ import java.util.Map;
 import java.util.logging.Level;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.enchantment.EnchantItemEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.inventory.AnvilInventory;
 import org.bukkit.inventory.ItemStack;
 
@@ -58,6 +60,24 @@ public class EnchantmentListener implements Listener {
             for (Map.Entry<Enchantment, Integer> en : enchants.entrySet()) {
                 output.addEnchantment(en.getKey(), en.getValue());
             }
+        }
+    }
+
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.NORMAL)
+    public void fish(PlayerFishEvent ev) {
+        if (ev.getCaught() instanceof ItemStack) {
+            ItemStack stack = (ItemStack) ev.getCaught();
+            Map<Enchantment, Integer> originalEnchantments = copy(stack.getEnchantments());
+            Map<Enchantment, Integer> enchants = checkAndModifyEnchantments(originalEnchantments);
+
+            for (Enchantment key : originalEnchantments.keySet()) {
+                stack.removeEnchantment(key);
+            }
+
+            for (Map.Entry<Enchantment, Integer> en : enchants.entrySet()) {
+                stack.addEnchantment(en.getKey(), en.getValue());
+            }
+
         }
     }
 
